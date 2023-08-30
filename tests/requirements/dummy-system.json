@@ -1,0 +1,40 @@
+{
+    "system": {
+        "optimized_by": "volume",
+        "only_best": true,
+        "cooling": "AIR",
+        "cell": {
+            "manufacturer": "Virtual",
+            "model": "",
+            "format": ""
+        }
+    },
+    "electrical": {
+        "energy": 20000,
+        "voltage": {
+            "minimum": 200,
+            "nominal": 300,
+            "maximum": 420
+        },
+        "continuous maximum": {
+            "charge": {
+                "power": 3220
+            },
+            "discharge": {
+                "power": 4000
+            }
+        },
+        "maximum module voltage": 60,
+        "slave": {
+            "minimum": 10,
+            "maximum": 12,
+            "equal utilization": true
+        }
+    },
+    "mechanical": {
+        "weight": 20000,
+        "width": 50,
+        "height": 20,
+        "length": 50
+    }
+}

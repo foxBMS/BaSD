@@ -1,0 +1,155 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLState</id><coordinates><x>243</x><y>54</y><w>117</w><h>63</h></coordinates><panel_attributes>divide the required
+nom. system voltage
+by the nom. cell
+voltage</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>378</x><y>54</y><w>126</w><h>72</h></coordinates><panel_attributes>number of cells
+connected in series
+needed to reach the
+required nom.
+system voltage
+layer=1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>351</x><y>81</y><w>45</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>30;10;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>243</x><y>171</y><w>117</w><h>45</h></coordinates><panel_attributes>multiply needed
+number of cells with
+min. cell voltage</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>153</x><y>0</y><w>477</w><h>1845</h></coordinates><panel_attributes>basd: determine battery system configuration
+valign=top</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>108</x><y>18</y><w>90</w><h>36</h></coordinates><panel_attributes>requirements
+layer=1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>108</x><y>63</y><w>90</w><h>36</h></coordinates><panel_attributes>data of one cell
+layer=1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>189</x><y>72</y><w>72</w><h>27</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>387</x><y>171</y><w>90</w><h>45</h></coordinates><panel_attributes>minimal system
+voltage for this
+system design</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>351</x><y>189</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>40;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>396</x><y>207</y><w>54</w><h>81</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;70;40;70;40;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>243</x><y>234</y><w>162</w><h>63</h></coordinates><panel_attributes>check that minimal system
+voltage for this system desgin
+is smaller than minmal system
+voltage in requirements</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>297</x><y>324</y><w>36</w><h>36</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>306</x><y>351</y><w>36</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+no</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>405</x><y>468</y><w>117</w><h>45</h></coordinates><panel_attributes>multiply needed
+number of cells with
+max. cell voltage</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>243</x><y>468</y><w>90</w><h>45</h></coordinates><panel_attributes>maximal system
+voltage for this
+system design</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>324</x><y>477</y><w>99</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>324</x><y>324</y><w>81</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+yes</panel_attributes><additional_attributes>70;20;10;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>387</x><y>324</y><w>144</w><h>45</h></coordinates><panel_attributes>divide minimal system
+voltage in requirements
+by needed number of cells</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>90</y><w>81</w><h>126</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>70;120;10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>117</y><w>162</w><h>72</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;30;160;30;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>495</x><y>81</y><w>72</w><h>279</h></coordinates><panel_attributes>lt=&lt;-
+fg=green</panel_attributes><additional_attributes>40;290;60;290;60;10;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>432</x><y>405</y><w>90</w><h>36</h></coordinates><panel_attributes>lower bound of
+cell voltage</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>306</x><y>288</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>315</x><y>504</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>243</x><y>405</y><w>117</w><h>45</h></coordinates><panel_attributes>take min. cell
+voltage as
+lower bound</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>189</y><w>81</w><h>252</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>70;260;10;260;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>378</x><y>405</y><w>36</w><h>36</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>351</x><y>414</y><w>45</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>30;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>387</x><y>360</y><w>27</w><h>63</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>405</x><y>414</y><w>45</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>30;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>432</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>513</x><y>333</y><w>54</w><h>171</h></coordinates><panel_attributes>lt=&lt;-
+fg=green</panel_attributes><additional_attributes>10;170;40;170;40;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>306</x><y>630</y><w>36</w><h>36</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>333</x><y>630</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+yes</panel_attributes><additional_attributes>60;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>315</x><y>594</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>315</x><y>657</y><w>36</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+no</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>243</x><y>711</y><w>117</w><h>45</h></coordinates><panel_attributes>take max. cell
+voltage as
+upper bound</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>387</x><y>630</y><w>135</w><h>45</h></coordinates><panel_attributes>divide maximal system
+voltage in requirements
+by needed number of cell </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>513</x><y>477</y><w>54</w><h>198</h></coordinates><panel_attributes>lt=&lt;-
+fg=green</panel_attributes><additional_attributes>10;200;40;200;40;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>378</x><y>711</y><w>36</w><h>36</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>351</x><y>720</y><w>45</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>30;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>387</x><y>666</y><w>27</w><h>63</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>405</x><y>720</y><w>45</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>30;10;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>432</x><y>711</y><w>90</w><h>36</h></coordinates><panel_attributes>upper bound of
+cell voltage</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>189</x><y>27</y><w>135</w><h>45</h></coordinates><panel_attributes>lt=&lt;-
+fg=magenta</panel_attributes><additional_attributes>130;30;130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>207</x><y>27</y><w>54</w><h>567</h></coordinates><panel_attributes>lt=&lt;-
+fg=magenta</panel_attributes><additional_attributes>40;610;10;610;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>207</x><y>261</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;-
+fg=magenta</panel_attributes><additional_attributes>40;10;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>432</x><y>990</y><w>90</w><h>36</h></coordinates><panel_attributes>usable cell
+capacity</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>513</x><y>414</y><w>72</w><h>405</h></coordinates><panel_attributes>lt=&lt;-
+fg=red</panel_attributes><additional_attributes>10;430;60;430;60;10;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>396</x><y>909</y><w>126</w><h>63</h></coordinates><panel_attributes>integrate the current
+in the stored discharge
+curve via the
+cell voltage </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>252</x><y>1098</y><w>108</w><h>63</h></coordinates><panel_attributes>determine number
+of cells in parallel
+to reach the
+required capacity</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>387</x><y>1044</y><w>135</w><h>72</h></coordinates><panel_attributes>determine the required
+system capacity by
+dividing the required
+energy by the nominal
+system voltage</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>1017</y><w>27</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>207</x><y>567</y><w>225</w><h>495</h></coordinates><panel_attributes>lt=&lt;-
+fg=magenta</panel_attributes><additional_attributes>230;530;230;480;10;480;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>585</x><y>1035</y><w>90</w><h>36</h></coordinates><panel_attributes>system capacity
+layer=1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>585</x><y>1080</y><w>90</w><h>36</h></coordinates><panel_attributes>layer=1
+transparency=0
+number of cells
+in parallel</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>585</x><y>855</y><w>90</w><h>36</h></coordinates><panel_attributes>layer=1
+transparency=0
+number of cells
+in series</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>558</x><y>909</y><w>45</w><h>63</h></coordinates><panel_attributes>lt=&lt;-
+fg=red</panel_attributes><additional_attributes>30;10;10;10;10;50</additional_attributes></element><element><id>UMLObject</id><coordinates><x>585</x><y>945</y><w>90</w><h>36</h></coordinates><panel_attributes>upper bound of
+cell voltage
+layer=1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>585</x><y>900</y><w>90</w><h>36</h></coordinates><panel_attributes>lower bound of
+cell voltage
+layer=1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>648</y><w>90</w><h>225</h></coordinates><panel_attributes>lt=&lt;-
+fg=green</panel_attributes><additional_attributes>80;230;80;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>513</x><y>720</y><w>45</w><h>225</h></coordinates><panel_attributes>lt=&lt;-
+fg=blue</panel_attributes><additional_attributes>10;230;30;230;30;10;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>243</x><y>540</y><w>162</w><h>63</h></coordinates><panel_attributes>check that maximal system
+voltage for this system desgin
+is bigger than maximal system
+voltage in requirements</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>387</x><y>774</y><w>135</w><h>54</h></coordinates><panel_attributes>check that provided
+discharge curve does
+violate upper and
+lower bound in between</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>738</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>513</x><y>792</y><w>72</w><h>180</h></coordinates><panel_attributes>lt=&lt;-
+fg=red</panel_attributes><additional_attributes>10;180;60;180;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>414</y><w>225</w><h>405</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>230;430;10;430;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>792</y><w>234</w><h>162</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>240;160;10;160;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>459</x><y>846</y><w>36</w><h>36</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>405</x><y>846</y><w>72</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+yes</panel_attributes><additional_attributes>10;20;60;20</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>234</x><y>855</y><w>18</w><h>18</h></coordinates><panel_attributes>type=final</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>819</y><w>27</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>873</y><w>36</w><h>54</h></coordinates><panel_attributes>lt=&lt;-
+no</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>963</y><w>27</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>585</x><y>990</y><w>90</w><h>36</h></coordinates><panel_attributes>usable cell
+capacity
+layer=1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>531</x><y>918</y><w>72</w><h>63</h></coordinates><panel_attributes>lt=&lt;-
+fg=blue</panel_attributes><additional_attributes>60;50;10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>225</x><y>999</y><w>225</w><h>153</h></coordinates><panel_attributes>lt=&lt;-
+fg=gray</panel_attributes><additional_attributes>30;150;10;150;10;10;230;10</additional_attributes></element><element><id>Relation</id><coordinates><x>333</x><y>1053</y><w>72</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>306</x><y>1152</y><w>27</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>513</x><y>999</y><w>90</w><h>27</h></coordinates><panel_attributes>lt=&lt;-
+fg=gray</panel_attributes><additional_attributes>80;10;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>288</x><y>846</y><w>126</w><h>36</h></coordinates><panel_attributes>raise Exception:
+InvalidDischargeCurve</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>243</x><y>855</y><w>63</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>270</x><y>1179</y><w>90</w><h>36</h></coordinates><panel_attributes>layer=1
+transparency=0
+number of cells
+in parallel</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>387</x><y>1152</y><w>135</w><h>63</h></coordinates><panel_attributes>multiply number of
+cells with max. discharge
+current of cell  times
+nom. system voltage</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>351</x><y>1188</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>40;10;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>387</x><y>1242</y><w>135</w><h>36</h></coordinates><panel_attributes>max. discharge power</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>441</x><y>1206</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>234</x><y>1242</y><w>126</w><h>45</h></coordinates><panel_attributes>check max. discharge
+power &gt;= required
+discharge power</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>351</x><y>1251</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>207</x><y>990</y><w>45</w><h>297</h></coordinates><panel_attributes>lt=&lt;-
+fg=magenta</panel_attributes><additional_attributes>30;310;10;310;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>261</x><y>1341</y><w>36</w><h>36</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>1278</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>1341</y><w>99</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+no</panel_attributes><additional_attributes>90;20;10;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>369</x><y>1296</y><w>153</w><h>72</h></coordinates><panel_attributes>divide required discharge
+power divided by the nom.
+system voltage by the max.
+discharge current of the cell</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>432</x><y>1458</y><w>90</w><h>36</h></coordinates><panel_attributes>number of cells
+ in parallel</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>1368</y><w>45</w><h>54</h></coordinates><panel_attributes>lt=&lt;-
+  yes</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>459</x><y>1359</y><w>27</w><h>117</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>261</x><y>1458</y><w>36</w><h>36</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>1467</y><w>162</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>1188</y><w>126</w><h>252</h></coordinates><panel_attributes>lt=&lt;-
+fg=cyan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</panel_attributes><additional_attributes>80;260;10;260;10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>927</y><w>207</w><h>396</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>210;420;10;420;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>234</x><y>1512</y><w>135</w><h>63</h></coordinates><panel_attributes>multiply number of
+cells with max. charge
+current of cell times
+nom. system voltage</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>1485</y><w>27</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>387</x><y>1512</y><w>135</w><h>36</h></coordinates><panel_attributes>max. charge power</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>1521</y><w>45</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>30;10;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>396</x><y>1584</y><w>126</w><h>45</h></coordinates><panel_attributes>check max. charge
+power &gt;= required
+charge power</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>1539</y><w>27</w><h>63</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>405</x><y>1656</y><w>36</w><h>36</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>414</x><y>1620</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>216</x><y>1647</y><w>153</w><h>63</h></coordinates><panel_attributes>divide required charge
+power divided by the nom.
+system voltage by the max.
+charge current of the cell</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>405</x><y>1782</y><w>36</w><h>36</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>1656</y><w>63</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+no</panel_attributes><additional_attributes>10;20;50;20</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>1701</y><w>27</w><h>99</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>243</x><y>1782</y><w>90</w><h>36</h></coordinates><panel_attributes>number of cells
+ in parallel</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>414</x><y>1683</y><w>45</w><h>54</h></coordinates><panel_attributes>lt=&lt;-
+  yes</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>324</x><y>1791</y><w>99</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>1395</y><w>234</w><h>360</h></coordinates><panel_attributes>lt=&lt;-
+fg=cyan
+</panel_attributes><additional_attributes>240;380;10;380;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>414</x><y>1107</y><w>207</w><h>747</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>210;10;210;810;10;810;10;790</additional_attributes></element><element><id>UMLState</id><coordinates><x>468</x><y>1773</y><w>108</w><h>45</h></coordinates><panel_attributes>multiply number
+of cells in parallel
+with cell capacity</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>558</x><y>1044</y><w>45</w><h>747</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>30;10;10;10;10;810</additional_attributes></element><element><id>Relation</id><coordinates><x>531</x><y>999</y><w>27</w><h>792</h></coordinates><panel_attributes>lt=&lt;-
+fg=gray</panel_attributes><additional_attributes>10;860;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>252</x><y>1044</y><w>90</w><h>36</h></coordinates><panel_attributes>required
+system capacity</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>306</x><y>1071</y><w>27</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>1296</y><w>54</w><h>405</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>40;430;10;430;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>990</y><w>45</w><h>207</h></coordinates><panel_attributes>lt=&lt;-
+fg=magenta</panel_attributes><additional_attributes>30;210;10;210;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>234</x><y>1404</y><w>90</w><h>36</h></coordinates><panel_attributes>layer=1
+transparency=0
+number of cells
+in parallel</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>1431</y><w>27</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>207</x><y>1260</y><w>180</w><h>81</h></coordinates><panel_attributes>lt=&lt;-
+fg=magenta</panel_attributes><additional_attributes>180;70;10;70;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>378</x><y>1719</y><w>90</w><h>36</h></coordinates><panel_attributes>layer=1
+transparency=0
+number of cells
+in parallel</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>414</x><y>1746</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>432</x><y>1791</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>40;10;10;10</additional_attributes></element></diagram>

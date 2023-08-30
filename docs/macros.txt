@@ -1,0 +1,6 @@
+.. |basd| replace:: ``BaSD``
+.. |basd-tool| replace:: ``BaSD`` tool
+
+.. _Fraunhofer IISB: https://www.iisb.fraunhofer.de
+.. _foxBMS Project: https://foxbms.org
+.. _Naming Convention: https://docs.foxbms.org/introduction/naming-conventions.html

@@ -1,0 +1,64 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/*.egg-info": true,
+        "**/__pycache__": true,
+        "**/.mypy_cache": true,
+        "**/build": true,
+        "**/out": true,
+        "**/src/**/*.html": true,
+        "**/src/report.csv": true,
+        "**/*.step": true,
+        "**/*.stl": true,
+        "input/**": true,
+        ".vscode/**": true
+    },
+    "cSpell.useGitignore": true,
+    "explorer.excludeGitIgnore": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        79
+    ],
+    "[python]": {
+        "editor.rulers": [
+            88
+        ],
+    },
+    "[yaml]": {
+        "editor.rulers": [],
+    },
+    "files.encoding": "utf8",
+    "editor.insertSpaces": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "json.format.enable": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.extraPaths": [
+        "src/basd",
+        "src"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.lintOnSave": true,
+    "python.formatting.provider": "none",
+    "python.formatting.blackArgs": [
+        "--config",
+        "pyproject.toml",
+        "."
+    ],
+    "isort.args": [
+        "--settings-file",
+        "pyproject.toml",
+        "."
+    ],
+    "pylint.args": [
+        "--rcfile",
+        "pyproject.toml"
+    ]
+}

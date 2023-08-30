@@ -1,0 +1,46 @@
+{
+    "identification": {
+        "manufacturer": "dummy",
+        "model": "cell"
+    },
+    "basics": {
+        "mechanics": {
+            "weight": 0.068,
+            "format": "Cylindrical",
+            "standard": "",
+            "dimensions": {
+                "height": 0.070,
+                "length": 0.021,
+                "width": 0.021
+            }
+        },
+        "electrics": {
+            "energy": {
+                "nominal": 18.0,
+                "minimum": 18.0
+            },
+            "voltage": {
+                "nominal": 3.65,
+                "maximum": 4.25,
+                "minimum": 2.9
+            },
+            "current": {
+                "charge": 18.0,
+                "discharge": 18.0
+            },
+            "capacity": {
+                "initial": 7.5
+            },
+            "discharge curve": [
+                4.25,
+                4.00,
+                3.80,
+                3.65,
+                3.50,
+                3.30,
+                3.10,
+                2.90
+            ]
+        }
+    }
+}

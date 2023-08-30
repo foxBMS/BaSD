@@ -1,0 +1,157 @@
+variables:
+  ErrorActionPreference: "STOP"
+  MinicondaBaseEnvironmentActivateScript: C:\ProgramData\Miniconda3\Scripts\activate
+  CondaEnvironmentName: basd-devel-env-11
+  CondaPackageTestEnvironmentName: dummy
+  TestCells: $CI_PROJECT_DIR\tests\cells
+  TestCellExampleCell: $CI_PROJECT_DIR\tests\cells\Example_Cell.json
+  TestProfiles: $CI_PROJECT_DIR\tests\profiles
+  TestSystemRequirementsDummy: $CI_PROJECT_DIR\tests\requirements\dummy-system.json
+  TestSystemRequirementsExample: $CI_PROJECT_DIR\tests\requirements\Example-Requirements.json
+  TestExampleLifeCycle: $CI_PROJECT_DIR\tests\profiles\example_life_cycle.json
+
+stages:
+  - init_ci
+  - qa
+  - build
+  - test
+  - test_database
+  - test_designer
+  - test_simulation
+  - cleanup
+
+devel_env:
+  stage: init_ci
+  script:
+    - $nr_of_occurrences = (Get-ChildItem -Include *.md,*.rst -Recurse -Exclude .\git,.\build| Select-String -pattern "$CondaEnvironmentName" -AllMatches).matches.count
+    - if ($nr_of_occurrences -ne 4) { Throw "devel env name does not match the docs"}
+
+initialize_python_deps: # make sure we have an up-to-date conda and pip available
+  stage: init_ci
+  script:
+    - Remove-Item C:\ProgramData\Miniconda3\envs\$CondaPackageTestEnvironmentName* -Force -Recurse -ErrorAction SilentlyContinue
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript & conda update -n base -c defaults conda"
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript & python -m pip install pip --upgrade"
+
+build_package:
+  stage: build
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript & conda create -y -n $CondaPackageTestEnvironmentName python=3.10 pip"
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName & python -m pip install ."
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName & basd --help"
+
+check_plugin:
+  stage: build
+  script:
+    # make sure that baSD ist still available
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName & basd --help"
+    - Push-Location "tests\custom_plugin\overhead_plugin"
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName & python -m pip install ."
+    - Pop-Location
+    # make sure that the package installed correctly
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName & python tests\custom_plugin\overhead_plugin\test\test_custom_overhead_function.py"
+    # test that the plugin works at least somehow
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName & basd design -r tests\requirements\Example-Requirements.json -d tests\cells\Example_Cell.json --overhead-plugin custom_overhead_function"
+
+black:
+  stage: qa
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaEnvironmentName & python -m black --config pyproject.toml --check ."
+  dependencies: []
+
+isort:
+  stage: qa
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaEnvironmentName & python -m isort --settings-file pyproject.toml --check ."
+  dependencies: []
+
+pylint:
+  stage: qa
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaEnvironmentName & python -m pylint src"
+  dependencies: []
+
+mypy:
+  stage: qa
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaEnvironmentName & mypy src"
+  dependencies: []
+
+doc:
+  stage: test
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaEnvironmentName && docs\make.bat html"
+  dependencies: []
+
+doc-spelling:
+  stage: test
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaEnvironmentName && docs\make.bat html"
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaEnvironmentName && docs\make.bat spelling"
+  dependencies: []
+
+# general test
+general_test:
+  stage: test
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName && basd -h"
+  dependencies: []
+
+# database tests
+database_help:
+  stage: test_database
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName && basd db -h"
+  dependencies: []
+
+database_add:
+  stage: test_database
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName && basd db rm -a"
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName && basd db add $TestCells"
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName && basd db list"
+  dependencies: []
+
+# designer tests
+designer_help:
+  stage: test_designer
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName && basd design -h"
+  dependencies: []
+
+designer_run:
+  stage: test_designer
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName && basd design -r $TestSystemRequirementsExample"
+  dependencies: []
+  needs: [database_add]
+  artifacts:
+    paths:
+      - "report.json"
+
+# simulation tests
+simulation_help:
+  stage: test_simulation
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName && basd sim -h"
+  dependencies: []
+
+simulation_run:
+  stage: test_simulation
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaPackageTestEnvironmentName && basd sim 0 -r report.json -l $TestExampleLifeCycle"
+  dependencies: [designer_run]
+  needs: [designer_run]
+
+# cli runnner unit tests
+click_runnertests:
+  stage: test
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript $CondaEnvironmentName && python -m unittest .\tests\cli_tests.py -v"
+  dependencies: []
+
+clean_package: # remove the environment, that was used for testing the package build
+  stage: cleanup
+  script:
+    - cmd /c "$MinicondaBaseEnvironmentActivateScript & conda env remove -n $CondaPackageTestEnvironmentName -y"
+  when: always

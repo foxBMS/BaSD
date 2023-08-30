@@ -1,0 +1,38 @@
+{
+    "system": {
+        "optimized_by": "volume",
+        "only_best": false,
+        "cooling": "AIR",
+        "cell": {
+            "format": "prismatic"
+        }
+    },
+    "electrical": {
+        "energy": 8000,
+        "voltage": {
+            "minimum": 100,
+            "nominal": 150,
+            "maximum": 200
+        },
+        "continuous maximum": {
+            "charge": {
+                "power": 5000
+            },
+            "discharge": {
+                "power": 5000
+            }
+        },
+        "maximum module voltage": 60,
+        "slave": {
+            "minimum": 10,
+            "maximum": 12,
+            "equal utilization": true
+        }
+    },
+    "mechanical": {
+        "weight": 300,
+        "width": 2.0,
+        "height": 0.4,
+        "length": 3.0
+    }
+}

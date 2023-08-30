@@ -1,0 +1,75 @@
+{
+    "repeat": 1,
+    "spring": {
+        "temperature": 15,
+        "duration": 90,
+        "usage": {
+            "day 1": "example_profile_1.csv",
+            "day 13": "example_profile_2.csv",
+            "day 24": "example_profile_1.csv",
+            "day 33": "example_profile_1.csv",
+            "day 43": "example_profile_2.csv",
+            "day 44": "example_profile_1.csv",
+            "day 51": "example_profile_1.csv",
+            "day 62": "example_profile_2.csv",
+            "day 67": "example_profile_3.csv",
+            "day 75": "example_profile_1.csv",
+            "day 83": "example_profile_2.csv",
+            "day 85": "example_profile_3.csv"
+        }
+    },
+    "summer": {
+        "temperature": 25,
+        "duration": 90,
+        "usage": {
+            "day 6": "example_profile_1.csv",
+            "day 12": "example_profile_2.csv",
+            "day 21": "example_profile_1.csv",
+            "day 31": "example_profile_3.csv",
+            "day 45": "example_profile_1.csv",
+            "day 47": "example_profile_2.csv",
+            "day 58": "example_profile_1.csv",
+            "day 64": "example_profile_3.csv",
+            "day 73": "example_profile_1.csv",
+            "day 81": "example_profile_2.csv",
+            "day 83": "example_profile_1.csv",
+            "day 87": "example_profile_3.csv"
+        }
+    },
+    "autumn": {
+        "temperature": 15,
+        "duration": 90,
+        "usage": {
+            "day 1": "example_profile_1.csv",
+            "day 13": "example_profile_2.csv",
+            "day 24": "example_profile_3.csv",
+            "day 33": "example_profile_1.csv",
+            "day 43": "example_profile_2.csv",
+            "day 44": "example_profile_1.csv",
+            "day 51": "example_profile_1.csv",
+            "day 62": "example_profile_3.csv",
+            "day 67": "example_profile_2.csv",
+            "day 75": "example_profile_1.csv",
+            "day 83": "example_profile_2.csv",
+            "day 85": "example_profile_1.csv"
+        }
+    },
+    "winter": {
+        "temperature": 0,
+        "duration": 90,
+        "usage": {
+            "day 6": "example_profile_3.csv",
+            "day 12": "example_profile_2.csv",
+            "day 21": "example_profile_1.csv",
+            "day 31": "example_profile_2.csv",
+            "day 45": "example_profile_1.csv",
+            "day 47": "example_profile_2.csv",
+            "day 58": "example_profile_1.csv",
+            "day 64": "example_profile_2.csv",
+            "day 73": "example_profile_1.csv",
+            "day 81": "example_profile_2.csv",
+            "day 83": "example_profile_3.csv",
+            "day 87": "example_profile_3.csv"
+        }
+    }
+}

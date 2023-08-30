@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: BASD Battery System Designer Tool.",
+            "type": "python",
+            "request": "launch",
+            "module": "basd",
+            "cwd": "${workspaceRoot}/src",
+            "args": [
+                "-r",
+                "${workspaceRoot}/tests/system-requirements.json",
+                "-p",
+                "${workspaceRoot}/tests/profiles",
+                "-d",
+                "${workspaceRoot}/tests/data",
+                "--report",
+                "${workspaceRoot}",
+            ]
+        },
+        {
+            "name": "Python: BASD Report Vizualization Tool (rviz).",
+            "type": "python",
+            "request": "launch",
+            "module": "basd.rviz",
+            "cwd": "${workspaceRoot}/src",
+            "args": [
+                "-r",
+                "${workspaceRoot}/src/report.csv"
+            ]
+        },
+        {
+            "name": "Python: BASD CAD Vizualization Tool (cad)",
+            "type": "python",
+            "request": "launch",
+            "module": "basd.cad",
+            "cwd": "${workspaceRoot}/src",
+            "args": [
+                "--interactive",
+                "--layout",
+                "${workspaceRoot}/tests/system-layout.json"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>8</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLGeneric</id><coordinates><x>72</x><y>104</y><w>160</w><h>80</h></coordinates><panel_attributes>symbol=component
+basd:
+battery system designs</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>496</x><y>200</y><w>160</w><h>80</h></coordinates><panel_attributes>symbol=component
+basd:
+life cycle simulation</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>496</x><y>296</y><w>160</w><h>80</h></coordinates><panel_attributes>symbol=component
+basd: CAD</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>312</x><y>120</y><w>88</w><h>48</h></coordinates><panel_attributes>&lt;&lt; file &gt;&gt;
+report</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>496</x><y>104</y><w>160</w><h>80</h></coordinates><panel_attributes>symbol=component
+basd:
+optimal connection</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>128</y><w>104</w><h>32</h></coordinates><panel_attributes>&lt;&lt;generates&gt;&gt;
+lt=&lt;-</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>136</y><w>72</w><h>216</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;250;10;250;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>392</x><y>128</y><w>120</w><h>32</h></coordinates><panel_attributes>&lt;&lt;use&gt;&gt;
+lt=&lt;-</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>232</y><w>72</w><h>24</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element></diagram>

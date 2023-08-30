@@ -1,0 +1,120 @@
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLObject</id><coordinates><x>484</x><y>33</y><w>110</w><h>44</h></coordinates><panel_attributes>transparency=0
+layer=1
+&lt;&lt;file&gt;&gt;
+system layouts</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>484</x><y>143</y><w>110</w><h>55</h></coordinates><panel_attributes>&lt;&lt;file&gt;&gt;
+life cycle
+definition
+transparency=0
+layer=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>341</x><y>33</y><w>110</w><h>44</h></coordinates><panel_attributes>read selected
+layout definition</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>484</x><y>88</y><w>110</w><h>44</h></coordinates><panel_attributes>&lt;&lt;files&gt;&gt;
+cell data
+transparency=0
+layer=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>198</x><y>165</y><w>110</w><h>44</h></coordinates><panel_attributes>cell data of
+specified cell</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>198</x><y>33</y><w>110</w><h>44</h></coordinates><panel_attributes>system layout</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>198</x><y>99</y><w>110</w><h>44</h></coordinates><panel_attributes>read cell data
+of specified cell</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>44</y><w>66</w><h>33</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>0</x><y>0</y><w>539</w><h>1760</h></coordinates><panel_attributes>basd: life cycle simulation
+valign=top</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>484</x><y>264</y><w>110</w><h>44</h></coordinates><panel_attributes>calendric
+aging model
+transparency=0
+layer=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>198</x><y>363</y><w>110</w><h>55</h></coordinates><panel_attributes>take one period
+in life cycle
+definition</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>616</x><y>121</y><w>187</w><h>132</h></coordinates><panel_attributes>period 1:
+	temp: 20C°
+	duration: 30 days
+	usage:
+		day 1: profile1
+		day 13: profile2
+		day 27: profile1
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>616</x><y>22</y><w>187</w><h>66</h></coordinates><panel_attributes>calendaric &amp; cyclic aging
+factor at specific
+temperature, duration ...
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>583</x><y>44</y><w>55</w><h>88</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;60;30;10</additional_attributes></element><element><id>Relation</id><coordinates><x>583</x><y>143</y><w>55</w><h>55</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;30;30;20</additional_attributes></element><element><id>UMLObject</id><coordinates><x>484</x><y>209</y><w>110</w><h>44</h></coordinates><panel_attributes>&lt;&lt;files&gt;&gt;
+load profiles
+transparency=0
+layer=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>484</x><y>319</y><w>110</w><h>44</h></coordinates><panel_attributes>cyclic
+aging model
+transparency=0
+layer=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>616</x><y>275</y><w>143</w><h>33</h></coordinates><panel_attributes>timestamp, power</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>583</x><y>220</y><w>55</w><h>88</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;30;60</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>110</y><w>209</w><h>33</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>165</y><w>209</w><h>253</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;210;50;210;50;10;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>66</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>44</y><w>66</w><h>33</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>132</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>198</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>198</x><y>440</y><w>110</w><h>44</h></coordinates><panel_attributes>period
+definition</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>407</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>198</x><y>506</y><w>110</w><h>66</h></coordinates><panel_attributes>split period
+at the point
+where the
+system is used</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>473</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>198</x><y>594</y><w>110</w><h>44</h></coordinates><panel_attributes>period
+part</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>561</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>176</x><y>660</y><w>132</w><h>55</h></coordinates><panel_attributes>determine calendric
+aging of this
+period part</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>198</x><y>737</y><w>110</w><h>77</h></coordinates><panel_attributes>changed
+system vector
+(int. resistance
+&amp; capacity)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>275</y><w>209</w><h>440</h></coordinates><panel_attributes>lt=&lt;-
+fg=blue</panel_attributes><additional_attributes>10;380;80;380;80;10;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>132</x><y>176</y><w>88</w><h>528</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>40;460;10;460;10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>704</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>176</x><y>1001</y><w>132</w><h>55</h></coordinates><panel_attributes>determine cyclic
+aging for specified
+load profile</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>1045</y><w>33</w><h>66</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>176</x><y>1177</y><w>132</w><h>55</h></coordinates><panel_attributes>determine calendric
+aging for one day</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>1221</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>220</y><w>209</w><h>825</h></coordinates><panel_attributes>lt=&lt;-
+fg=green</panel_attributes><additional_attributes>10;730;120;730;120;10;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>1012</y><w>154</w><h>220</h></coordinates><panel_attributes>lt=&lt;-
+fg=green</panel_attributes><additional_attributes>10;180;120;180;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>44</y><w>110</w><h>231</h></coordinates><panel_attributes>lt=&lt;-
+fg=red</panel_attributes><additional_attributes>80;190;10;190;10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>242</y><w>88</w><h>792</h></coordinates><panel_attributes>lt=&lt;-
+fg=red</panel_attributes><additional_attributes>60;700;10;700;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>1001</y><w>88</w><h>220</h></coordinates><panel_attributes>lt=&lt;-
+fg=red</panel_attributes><additional_attributes>60;180;10;180;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>132</x><y>671</y><w>66</w><h>396</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>40;340;10;340;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>132</x><y>1034</y><w>66</w><h>209</h></coordinates><panel_attributes>lt=&lt;-
+fg=orange</panel_attributes><additional_attributes>40;170;10;170;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>484</x><y>1364</y><w>110</w><h>44</h></coordinates><panel_attributes>internal
+resistance
+transparency=0
+layer=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>330</y><w>209</w><h>737</h></coordinates><panel_attributes>lt=&lt;-
+fg=magenta</panel_attributes><additional_attributes>10;650;140;650;140;10;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>682</y><w>110</w><h>539</h></coordinates><panel_attributes>lt=&lt;-
+fg=blue</panel_attributes><additional_attributes>10;470;80;470;80;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>484</x><y>1419</y><w>110</w><h>44</h></coordinates><panel_attributes>system
+capacity
+transparency=0
+layer=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>1386</y><w>209</w><h>33</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>170;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>1408</y><w>209</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>170;30;110;30;110;10;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>198</x><y>1452</y><w>110</w><h>55</h></coordinates><panel_attributes>check if there
+is still a
+period part</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>1419</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>231</x><y>1529</y><w>44</w><h>44</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>176</x><y>1529</y><w>77</w><h>44</h></coordinates><panel_attributes>lt=&lt;-
+yes</panel_attributes><additional_attributes>10;20;50;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>77</x><y>1529</y><w>110</w><h>44</h></coordinates><panel_attributes>next
+period part</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>1562</y><w>55</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
+  no</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>231</x><y>1705</y><w>44</w><h>44</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>33</x><y>605</y><w>187</w><h>968</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>150;10;10;10;10;860;40;860</additional_attributes></element><element><id>UMLState</id><coordinates><x>198</x><y>1606</y><w>110</w><h>66</h></coordinates><panel_attributes>check if there
+is still a period
+definition in the
+life cycle </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>187</x><y>1705</y><w>66</w><h>44</h></coordinates><panel_attributes>lt=&lt;-
+yes</panel_attributes><additional_attributes>10;20;40;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>88</x><y>1705</y><w>110</w><h>44</h></coordinates><panel_attributes>next
+period</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>264</x><y>1705</y><w>88</w><h>44</h></coordinates><panel_attributes>lt=&lt;-
+no</panel_attributes><additional_attributes>60;20;10;20</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>330</x><y>1716</y><w>22</w><h>22</h></coordinates><panel_attributes>type=final</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>11</x><y>451</y><w>209</w><h>1298</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>170;10;10;10;10;1160;70;1160</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>1133</y><w>33</w><h>66</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>187</x><y>836</y><w>121</w><h>55</h></coordinates><panel_attributes>check if load
+profile follow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>803</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>231</x><y>924</y><w>44</w><h>44</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>880</y><w>33</w><h>66</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>957</y><w>55</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
+  yes</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>264</x><y>924</y><w>110</w><h>44</h></coordinates><panel_attributes>fg=cyan
+no</panel_attributes><additional_attributes>80;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>264</x><y>935</y><w>110</w><h>363</h></coordinates><panel_attributes>lt=&lt;-
+fg=cyan
+</panel_attributes><additional_attributes>10;310;80;310;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>1496</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>1661</y><w>33</w><h>66</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>231</x><y>1254</y><w>44</w><h>44</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>605</y><w>66</w><h>429</h></coordinates><panel_attributes>lt=&lt;-
+fg=light_gray</panel_attributes><additional_attributes>10;370;40;370;40;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>627</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>198</x><y>231</y><w>110</w><h>44</h></coordinates><panel_attributes>initiate
+system vector</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>198</x><y>297</y><w>110</w><h>44</h></coordinates><panel_attributes>system vector</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>264</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>330</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>66</x><y>308</y><w>154</w><h>462</h></coordinates><panel_attributes>lt=&lt;-
+fg=pink</panel_attributes><additional_attributes>120;400;10;400;10;10;120;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>198</x><y>1089</y><w>110</w><h>55</h></coordinates><panel_attributes>changed
+system vector</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>198</x><y>1320</y><w>110</w><h>44</h></coordinates><panel_attributes>system vector</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>66</x><y>770</y><w>154</w><h>286</h></coordinates><panel_attributes>lt=&lt;-
+fg=pink</panel_attributes><additional_attributes>100;240;10;240;10;10;120;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>165</x><y>1386</y><w>143</w><h>44</h></coordinates><panel_attributes>append int. resistance
+and system capacity</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>1287</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>88</x><y>781</y><w>165</w><h>517</h></coordinates><panel_attributes>lt=&lt;-
+fg=cyan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+no load profile</panel_attributes><additional_attributes>130;450;10;450;10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>1353</y><w>33</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>231</y><w>110</w><h>77</h></coordinates><panel_attributes>lt=&lt;-
+fg=blue</panel_attributes><additional_attributes>10;10;80;10;80;50</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>253</y><w>176</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+fg=magenta</panel_attributes><additional_attributes>10;10;140;10;140;80</additional_attributes></element></diagram>

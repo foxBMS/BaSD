@@ -1,0 +1,204 @@
+{
+    "required": [
+        "identification",
+        "basics"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "identification": {
+            "$id": "/properties/identification",
+            "title": "identification of the battery cell",
+            "required": [
+                "manufacturer",
+                "model"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "manufacturer": {
+                    "$id": "/properties/identification/manufacturer",
+                    "title": "Name of the manufacturer",
+                    "type": "string"
+                },
+                "model": {
+                    "$id": "/properties/identification/model",
+                    "title": "Name of the model",
+                    "type": "string"
+                }
+            }
+        },
+        "basics": {
+            "$id": "/properties/basics",
+            "title": "Basic properties the battery cell",
+            "required": [
+                "mechanics",
+                "electrics"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "mechanics": {
+                    "$id": "/properties/basics/mechanics",
+                    "title": "Basic mechanical properties the battery cell",
+                    "required": [
+                        "weight",
+                        "format",
+                        "standard",
+                        "dimensions"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "weight": {
+                            "$id": "/properties/mechanics/weight",
+                            "title": "weight of the cell",
+                            "type": "number"
+                        },
+                        "standard": {
+                            "$id": "/properties/mechanics/standard",
+                            "title": "standard of the cell format",
+                            "type": "string"
+                        },
+                        "format": {
+                            "$id": "/properties/mechanics/format",
+                            "title": "format of the cell",
+                            "type": "string",
+                            "enum": [
+                                "Cylindrical",
+                                "Pouch",
+                                "Prismatic"
+                            ]
+                        },
+                        "dimensions": {
+                            "$id": "/properties/mechanics/dimensions",
+                            "title": "dimensions of the battery cell",
+                            "required": [
+                                "height",
+                                "length",
+                                "width"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "height": {
+                                    "$id": "/properties/basics/dimensions/height",
+                                    "title": "height of the battery cell",
+                                    "type": "number"
+                                },
+                                "length": {
+                                    "$id": "/properties/basics/dimensions/length",
+                                    "title": "length of the battery cell",
+                                    "type": "number"
+                                },
+                                "width": {
+                                    "$id": "/properties/basics/dimensions/width",
+                                    "title": "width of the battery cell",
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                },
+                "electrics": {
+                    "$id": "/properties/basics/electrics",
+                    "title": "Basic electrical properties the battery cell",
+                    "required": [
+                        "energy",
+                        "voltage",
+                        "current",
+                        "capacity",
+                        "discharge curve"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "energy": {
+                            "$id": "/properties/electrics/energy",
+                            "title": "energy specifications of the cell",
+                            "required": [
+                                "nominal",
+                                "minimum"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "nominal": {
+                                    "$id": "/properties/electrics/energy/nominal",
+                                    "title": "nominal energy of the battery cell",
+                                    "type": "number"
+                                },
+                                "minimum": {
+                                    "$id": "/properties/electrics/energy/minimum",
+                                    "title": "minimum energy of the battery cell",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "voltage": {
+                            "$id": "/properties/electrics/voltage",
+                            "title": "voltage specifications of the cell",
+                            "required": [
+                                "nominal",
+                                "maximum",
+                                "minimum"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "nominal": {
+                                    "$id": "/properties/electrics/voltage/nominal",
+                                    "title": "nominal voltage of the battery cell",
+                                    "type": "number"
+                                },
+                                "maximum": {
+                                    "$id": "/properties/electrics/voltage/maximum",
+                                    "title": "maximum voltage of the battery cell",
+                                    "type": "number"
+                                },
+                                "minimum": {
+                                    "$id": "/properties/electrics/voltage/minimum",
+                                    "title": "minimum voltage of the battery cell",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "current": {
+                            "$id": "/properties/electrics/current",
+                            "title": "current specifications of the cell",
+                            "required": [
+                                "charge",
+                                "discharge"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "charge": {
+                                    "$id": "/properties/electrics/current/charge",
+                                    "title": "maximum charge current of the battery cell",
+                                    "type": "number"
+                                },
+                                "discharge": {
+                                    "$id": "/properties/electrics/current/discharge",
+                                    "title": "maximum discharge current of the battery cell",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "capacity": {
+                            "$id": "/properties/electrics/capacity",
+                            "title": "capacity specification of the cell",
+                            "required": [
+                                "initial"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "initial": {
+                                    "$id": "/properties/electrics/capacity/initial",
+                                    "title": "initial capacity of the battery cell",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "discharge curve": {
+                            "$id": "/properties/electrics/discharge curve",
+                            "title": "discharge curve of the battery cell",
+                            "type": "array"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

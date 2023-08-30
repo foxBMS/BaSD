@@ -1,0 +1,21 @@
+{
+    "$id": "/properties/identification",
+    "title": "identification of the battery cell",
+    "required": [
+        "manufacturer",
+        "model"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "manufacturer": {
+            "$id": "/properties/identification/manufacturer",
+            "title": "Name of the manufacturer",
+            "type": "string"
+        },
+        "model": {
+            "$id": "/properties/identification/model",
+            "title": "Name of the model",
+            "type": "string"
+        }
+    }
+}

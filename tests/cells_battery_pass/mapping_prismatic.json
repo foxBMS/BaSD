@@ -1,0 +1,37 @@
+{
+    "identification": {
+        "manufacturer": "./GeneralInformation/MetaData/Brand",
+        "model": "./GeneralInformation/MetaData/BatteryName"
+    },
+    "basics": {
+        "mechanics": {
+            "weight": "./GeneralInformation/MechanicalParameters/Weight/Value / 1000",
+            "format": "uppercase:./GeneralInformation/MetaData/BatteryType",
+            "standard": "",
+            "dimensions": {
+                "height": "./GeneralInformation/MechanicalParameters/Dimensions/WidthPrismatic/Value / 1000",
+                "length": "./GeneralInformation/MechanicalParameters/Dimensions/LengthPrismatic/Value / 1000",
+                "width": "./GeneralInformation/MechanicalParameters/Dimensions/ThicknessPrismatic/Value / 1000"
+            }
+        },
+        "electrics": {
+            "energy": {
+                "nominal": "./GeneralInformation/ElectricalParameters/NominalCapacity/Value * ./GeneralInformation/ElectricalParameters/NominalCellVoltage/Value",
+                "minimum": "./GeneralInformation/ElectricalParameters/NominalCapacity/Value * ./GeneralInformation/ElectricalParameters/NominalCellVoltage/Value"
+            },
+            "voltage": {
+                "nominal": "./GeneralInformation/ElectricalParameters/NominalCellVoltage/Value",
+                "maximum": "./GeneralInformation/ElectricalParameters/EndOfChargeVoltage/Value",
+                "minimum": "./GeneralInformation/ElectricalParameters/EndOfDischargeVoltage/Value"
+            },
+            "current": {
+                "charge": "./GeneralInformation/ElectricalParameters/GravimetricPowerDensityPulse/Value / ./GeneralInformation/ElectricalParameters/NominalCellVoltage/Value * ./GeneralInformation/MechanicalParameters/Weight/Value / 1000",
+                "discharge": "./GeneralInformation/ElectricalParameters/GravimetricPowerDensityPulse/Value / ./GeneralInformation/ElectricalParameters/NominalCellVoltage/Value * ./GeneralInformation/MechanicalParameters/Weight/Value / 1000"
+            },
+            "capacity": {
+                "initial": "./GeneralInformation/ElectricalParameters/NominalCapacity/Value"
+            },
+            "discharge curve": "reverse:./ModelLevel/ElectricalModel/ISEA_R_OCV/Configuration/CustomDefinitions/MyOCV//Object/LookupData"
+        }
+    }
+}
