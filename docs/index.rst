@@ -68,7 +68,7 @@ The following documentation describes how to use and extend |basd|.
    :caption: Project Links
 
    license.rst
-   GitHub <https://github.com/BaSD-Project/BaSD>
+   GitHub <https://github.com/foxBMS/BaSD>
    Documentation <https://basd.readthedocs.io>
 
 Indices and tables
