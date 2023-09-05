@@ -33,6 +33,6 @@
 
 """Defines the BaSD version number"""
 
-_version = "2023.08.0"  #: BaSD version number: YYYY.MM.PATCH
+_version = "2023.09.1"  #: BaSD version number: YYYY.MM.PATCH
 
 __version__ = _version
