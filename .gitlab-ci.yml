@@ -2,7 +2,7 @@ variables:
   ErrorActionPreference: "STOP"
   MinicondaBaseEnvironmentActivateScript: C:\ProgramData\Miniconda3\Scripts\activate
   CondaEnvironmentName: basd-devel-env-11
-  CondaPackageTestEnvironmentName: dummy
+  CondaPackageTestEnvironmentName: dummy-$CI_COMMIT_SHORT_SHA
   TestCells: $CI_PROJECT_DIR\tests\cells
   TestCellExampleCell: $CI_PROJECT_DIR\tests\cells\Example_Cell.json
   TestProfiles: $CI_PROJECT_DIR\tests\profiles
