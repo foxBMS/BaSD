@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2010 - 2023, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
+# Copyright (c) 2010 - 2024, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -134,7 +134,11 @@ class CellDatabase:
                         "%s can not be added, because a mapping is not provided", i
                     )
                     continue
-                i = self._battery_pass_to_basd(i, Path(mapping))
+                try:
+                    i = self._battery_pass_to_basd(i, Path(mapping))
+                except ValueError as err:
+                    logging.warning("Problem with value %s in %s", err, i)
+                    continue
                 install_to_database.append(i)
             else:
                 install_to_database.append(i)

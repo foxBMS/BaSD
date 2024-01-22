@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2010 - 2023, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
+# Copyright (c) 2010 - 2024, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -161,7 +161,9 @@ def set_logging_level(verbosity: int = 0) -> None:
         4: logging.DEBUG,
     }
     logging.basicConfig(
-        level=logging_levels[min(verbosity, max(logging_levels.keys()))]
+        level=logging_levels[min(verbosity, max(logging_levels.keys()))],
+        format="%(asctime)s File:%(filename)s-%(lineno)d %(levelname)-8s %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
     )
 
 

@@ -5,8 +5,8 @@ Battery System Designer (``BaSD``)
 
     Automated, requirements driven battery system design
 
-The Battery System Designer (``BaSD``) tool is tool to support the design,
-layout and optimization the development of battery systems.
+The Battery System Designer (``BaSD``) tool is tool to support the design
+process, layout and optimization of battery systems during development.
 
 ``BaSD`` uses the basic, formalized requirements for a battery system from an
 electrical point of view (e.g., minimum and maximum system voltage, maximum

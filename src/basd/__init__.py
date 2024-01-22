@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2010 - 2023, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
+# Copyright (c) 2010 - 2024, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -33,6 +33,7 @@
 
 """Implements the command line interface to the Battery System Designer tool."""
 import logging
+import multiprocessing
 import os
 import sys
 import warnings
@@ -200,7 +201,7 @@ def remove(
     type=click.Path(exists=False, dir_okay=False, path_type=Path),
     default=(Path(os.getcwd()) / "report"),
     is_eager=True,
-    help="Write report file to FILE or DIRECTORY.",
+    help="Write report file to FILE.",
 )
 @click.option(
     "--max-number-of-solutions",
@@ -223,6 +224,12 @@ def remove(
     help="Use a custom overhead implementation. The module needs to be installed in "
     "the same python installation/environment.",
 )
+@click.option(
+    "--cores",
+    type=int,
+    default=multiprocessing.cpu_count() - 1,
+    help="Number of cpu cores used for the calculations.",
+)
 @click.pass_context
 def design(  # pylint: disable=too-many-arguments
     ctx: click.Context,
@@ -233,6 +240,7 @@ def design(  # pylint: disable=too-many-arguments
     max_number_of_solutions: int,
     cell: Optional[str],
     overhead_plugin: Optional[str],
+    cores: Optional[int],
 ) -> None:
     """system design task"""
     colorama.init()
@@ -258,7 +266,11 @@ def design(  # pylint: disable=too-many-arguments
         requirement.format = None
 
     bat_sys_variants = BatterySystemDesigns(
-        requirement, cell_database, max_number_of_solutions, overhead_plugin
+        requirement,
+        cell_database,
+        max_number_of_solutions,
+        overhead_plugin,
+        cores,
     )
     bat_sys_variants.create_report(report_file)
     ctx.exit(0)

@@ -5,43 +5,48 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: BASD Battery System Designer Tool.",
+            "name": "Python: BASD Battery System Designer Tool (design).",
             "type": "python",
             "request": "launch",
             "module": "basd",
             "cwd": "${workspaceRoot}/src",
             "args": [
-                "-r",
-                "${workspaceRoot}/tests/system-requirements.json",
-                "-p",
-                "${workspaceRoot}/tests/profiles",
-                "-d",
-                "${workspaceRoot}/tests/data",
+                "design",
+                "--requirements",
+                "${workspaceRoot}/tests/requirements/Example-Requirements.json",
+                "--database",
+                "${workspaceRoot}/tests/cells",
                 "--report",
-                "${workspaceRoot}",
-            ]
-        },
-        {
-            "name": "Python: BASD Report Vizualization Tool (rviz).",
-            "type": "python",
-            "request": "launch",
-            "module": "basd.rviz",
-            "cwd": "${workspaceRoot}/src",
-            "args": [
-                "-r",
-                "${workspaceRoot}/src/report.csv"
+                "${workspaceRoot}/src/report",
             ]
         },
         {
             "name": "Python: BASD CAD Vizualization Tool (cad)",
             "type": "python",
             "request": "launch",
-            "module": "basd.cad",
+            "module": "basd",
             "cwd": "${workspaceRoot}/src",
             "args": [
-                "--interactive",
-                "--layout",
-                "${workspaceRoot}/tests/system-layout.json"
+                "cad",
+                "--database",
+                "${workspaceRoot}/tests/cells",
+                "--output-format",
+                "stl",
+                "--report",
+                "${workspaceRoot}/src/report.json",
+                "0"
+            ]
+        },
+        {
+            "name": "Python: BASD CAD Vizualization Tool (db)",
+            "type": "python",
+            "request": "launch",
+            "module": "basd",
+            "cwd": "${workspaceRoot}/src",
+            "args": [
+                "db",
+                "add",
+                "${workspaceRoot}/tests/cells"
             ]
         }
     ]

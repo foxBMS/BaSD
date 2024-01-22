@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2010 - 2023, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
+# Copyright (c) 2010 - 2024, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -36,26 +36,13 @@
 import json
 import logging
 import os
-import sys
 from pathlib import Path
-from typing import NoReturn
 
-import cadquery as cq
-from cadquery import Shape, Workplane, exporters
-from cadquery.occ_impl.exporters.utils import toCompound
+from cadquery import exporters
 
 from ..database import CellDatabase
 from .cad_battery_pack import BatteryPack
-from .cad_system_definition import (
-    CellBlockDefinition,
-    CellDimensions,
-    ComponentDefinition,
-    InnerPadding,
-    ModuleDefinition,
-    OuterPadding,
-    RowOffset,
-    default_system_definition,
-)
+from .cad_system_definition import default_system_definition
 
 
 def create_cad(  # pylint: disable=too-many-locals

@@ -2,13 +2,8 @@
 @SET SPHINXOPTS=-W
 @SET SPHINXBUILD=python -m sphinx
 @SET SPHINXPROJ=battery_system_designer
-@SET SOURCEDIR=.
-
-
-@FOR /F "tokens=* USEBACKQ" %%F IN (`git rev-parse --show-toplevel`) DO @(
-    @SET REPO_ROOT=%%F
-)
-@SET BUILDDIR=%REPO_ROOT%\build\doc
+@SET SOURCEDIR=%~dp0
+@SET BUILDDIR=%~dp0..\build\doc
 
 @IF not exist %BUILDDIR% @mkdir %BUILDDIR%
 

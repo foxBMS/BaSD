@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2010 - 2023, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
+# Copyright (c) 2010 - 2024, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -33,6 +33,6 @@
 
 """Defines the BaSD version number"""
 
-_version = "2023.09.1"  #: BaSD version number: YYYY.MM.PATCH
+_version = "2024.01.1"  #: BaSD version number: YYYY.MM.PATCH
 
 __version__ = _version

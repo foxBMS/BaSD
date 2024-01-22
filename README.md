@@ -7,7 +7,9 @@
     </tbody>
 </table>
 
-    Automated, requirements driven battery system design
+```text
+Automated, requirements driven battery system design
+```
 
 ``BaSD`` uses the basic, formalized requirements for a battery system from an
 electrical point of view (e.g., minimum and maximum system voltage, maximum
@@ -27,13 +29,13 @@ configuration, layout and simplified CAD model
 The latest release can be installed via pip from [PyPi](https://pypi.org/project/basd):
 
 ```bash
-$ pip install basd
+pip install basd
 ```
 
 The latest development version can be installed via pip:
 
 ```bash
-$ pip install git+https://github.com/BaSD-Project/BaSD
+pip install git+https://github.com/foxBMS/BaSD
 ```
 
 ## Acknowledgment

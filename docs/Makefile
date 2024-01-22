@@ -1,8 +1,8 @@
 SPHINXOPTS    = -W
 SPHINXBUILD   = python -m sphinx
 SPHINXPROJ    = battery_system_designer
-SOURCEDIR     = .
-BUILDDIR      = _build
+SOURCEDIR     = $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+BUILDDIR      = $(dir $(realpath $(lastword $(MAKEFILE_LIST))))/../build/doc
 
 # Put it first so that "make" without argument is like "make help".
 help:

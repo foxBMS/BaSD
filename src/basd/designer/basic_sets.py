@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2010 - 2023, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
+# Copyright (c) 2010 - 2024, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -33,7 +33,7 @@
 
 """Basic classes of the used parameter sets"""
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Literal
 
 from ..database.battery_cell import BatteryCell
@@ -198,10 +198,10 @@ class BasicParameterSet:  # pylint: disable=too-many-instance-attributes
     """
 
     cell: BatteryCell
-    cell_block: CellBlock = CellBlock()
-    module: Module = Module()
-    string: String = String()
-    pack: Pack = Pack()
+    cell_block: CellBlock = field(default_factory=CellBlock)
+    module: Module = field(default_factory=Module)
+    string: String = field(default_factory=String)
+    pack: Pack = field(default_factory=Pack)
     cell_rotation: int = 0
 
     def __getitem__(

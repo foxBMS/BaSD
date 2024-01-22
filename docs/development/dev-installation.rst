@@ -23,7 +23,7 @@ For Development
       $ conda create -y -n basd-devel-env-11 python=3.10 pip
       $ conda activate basd-devel-env-11
       $ python -m pip install flit --upgrade
-      $ git clone https://github.com/BaSD-Project/BaSD
+      $ git clone https://github.com/foxBMS/BaSD
       $ cd battery-system-designer
       $ python -m flit install --deps all --only-deps
 
@@ -36,4 +36,4 @@ For Development
       $ cd path/to/repo
       $ code .
       $ cd src # testing needs to be run in source directory
-      $ python -m basd design -r ../tests/requirements/dummy-system.json
+      $ python -m basd design -r ../tests/requirements/Example-system.json --database ../tests/cells

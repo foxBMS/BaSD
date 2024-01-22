@@ -28,7 +28,25 @@
         "editor.rulers": [
             88
         ],
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
     },
+    "black-formatter.args": [
+        "--config",
+        "pyproject.toml",
+        "."
+    ],
+    "isort.args": [
+        "--profile",
+        "black",
+        "--settings-file",
+        "pyproject.toml",
+        "."
+    ],
+    "pylint.args": [
+        "--rcfile",
+        "pyproject.toml"
+    ],
     "[yaml]": {
         "editor.rulers": [],
     },
@@ -42,23 +60,5 @@
     "python.analysis.extraPaths": [
         "src/basd",
         "src"
-    ],
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.lintOnSave": true,
-    "python.formatting.provider": "none",
-    "python.formatting.blackArgs": [
-        "--config",
-        "pyproject.toml",
-        "."
-    ],
-    "isort.args": [
-        "--settings-file",
-        "pyproject.toml",
-        "."
-    ],
-    "pylint.args": [
-        "--rcfile",
-        "pyproject.toml"
     ]
 }

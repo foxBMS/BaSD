@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2010 - 2023, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
+# Copyright (c) 2010 - 2024, Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V.
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -35,14 +35,13 @@
 """
 import json
 import logging
-import os
 import sys
-from dataclasses import asdict
 from itertools import product
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from joblib import Parallel, delayed
 from scipy import interpolate
 
 from ..database import CellDatabase
@@ -57,7 +56,6 @@ from .basic_sets import (
 from .cooling import Cooling
 from .find_parameter_sets import find_parameter_sets
 from .overhead_functions import OverheadFunctions
-from .overhead_functions_abc import AbcOverheadFunctions
 from .parameter_set import ParameterSet
 from .system_design import SystemDesign
 
@@ -66,12 +64,13 @@ class BatterySystemDesigns:
     """BatterySystemDesigns class as first step in the pipeline finds and ranks possible
     battery system designs"""
 
-    def __init__(
+    def __init__(  # pylint: disable=too-many-arguments
         self,
         requirements: Requirements,
         cell_database: CellDatabase,
         max_number_of_solutions: int,
         overhead_plugin: str,
+        cores: int,
     ) -> None:
         """The constructor of the BatterySystemDesigns
 
@@ -79,6 +78,7 @@ class BatterySystemDesigns:
         :param cell_database: database with the cell information
         :param max_number_of_solutions: the maximal number of solution printed into the
             report
+        :param cores: number of cpu cores used for the calculations
         """
         self.requirements = requirements
         self.cell_database = cell_database
@@ -88,10 +88,10 @@ class BatterySystemDesigns:
         )
         self.considered_cells = considered_cells
         self.overhead_functions = overhead_functions
-        self.system_designs = self.determine_battery_system_designs()
+        self.system_designs = self.determine_battery_system_designs(cores)
 
     def determine_battery_system_designs(  # pylint: disable=too-many-locals
-        self,
+        self, cores
     ) -> list:
         """determines all valid battery system designs for all considered cells and
         cooling systems
@@ -99,65 +99,12 @@ class BatterySystemDesigns:
         :return: a list with all validated battery system designs
         """
         system_designs = []
-        for cell in self.considered_cells:
-            logging.info("Process %s", cell)
-            # get electrical system configuration
-            electrical_configuration = self._determine_battery_system_configuration(
-                cell
-            )
-            logging.debug(electrical_configuration)
-            start_parameter = [1, 1, 1, 1, 1]
-            # get all possible parameters for the series connection
-            parameters_series = find_parameter_sets(
-                start_parameter,
-                lambda x: np.prod(x)
-                >= electrical_configuration.cells_in_series,  # pylint: disable=cell-var-from-loop
-            )
-            start_parameter = [1, 1, 1, 1, 1]
-            # get all possible parameters for the parallel connection
-            parameters_parallel = find_parameter_sets(
-                start_parameter,
-                lambda x: np.prod(x)
-                >= electrical_configuration.cells_in_parallel,  # pylint: disable=cell-var-from-loop
-            )
-            parameter_sets = []
-            cell_rotation = (0, 1)  # 0=0° or 1=90° cell rotation
-            # overhead functions is a list with a overhead definition for each cooling type
-            for cart_product in product(
-                self.overhead_functions,
-                parameters_series,
-                parameters_parallel,
-                cell_rotation,
-            ):
-                parameter_set = ParameterSet(
-                    cell=cell, overhead=cart_product[0], requirements=self.requirements
-                )  # overhead
-                parameter_set["series"] = cart_product[1]  # series
-                parameter_set["parallel"] = cart_product[2]  # parallel
-                parameter_set.cell_rotation = cart_product[3]  # rotation
-                parameter_sets.append(parameter_set)
-                logging.debug(parameter_set)
-            (
-                validated_parameter_sets,
-                mechanical_properties,
-                max_module_voltages,
-                workloads,
-            ) = self._check_upper_bounds(parameter_sets)
-            # initialize all validated system designs
-            for i, parameter_set in enumerate(validated_parameter_sets):
-                electrical_property = ElectricalProperties(
-                    parameter_set,
-                    electrical_configuration,
-                    max_module_voltage=max_module_voltages[i],
-                    workload=workloads[i],
-                )
-                mechanical_property = mechanical_properties[i]
-                system_design = SystemDesign(
-                    parameter_set,
-                    mechanical_property,
-                    electrical_property,
-                )
-                system_designs.append(system_design)
+        result = Parallel(n_jobs=cores, backend="multiprocessing", verbose=1)(
+            delayed(self._system_designs_per_cell)(cell, logging.getLogger().level)
+            for cell in self.considered_cells
+        )
+        for system_design in result:
+            system_designs.extend(system_design)
         if self.requirements.optimized_by == "volume":
             system_designs.sort(key=lambda x: x.mechanical_properties.volume)
         else:
@@ -338,7 +285,7 @@ class BatterySystemDesigns:
                 - 100,
                 "Overhead weight cell block (%)": mech_prop.weight_overhead.cell_block[
                     1
-                ],  # pylint: disable=line-too-long
+                ],
                 "Overhead weight module (%)": mech_prop.weight_overhead.module[1],
                 "Overhead weight string (%)": mech_prop.weight_overhead.string[1],
                 "Overhead weight pack (%)": mech_prop.weight_overhead.pack[1],
@@ -451,8 +398,12 @@ class BatterySystemDesigns:
         mechanical_properties = []
         module_voltages = []
         slave_utils = []
+        number_of_parameter_sets = len(list_of_parameter_sets)
 
-        for parameter_set in list_of_parameter_sets:
+        for i, parameter_set in enumerate(list_of_parameter_sets):
+            logging.debug(
+                "Check parameter set number %s of %s", i, number_of_parameter_sets
+            )
             module_voltage = parameter_set.get_maximum_module_voltage()
             if module_voltage >= self.requirements.max_module_voltage:
                 continue
@@ -599,6 +550,70 @@ class BatterySystemDesigns:
                 "Please check requirement settings and database"
             )
         return considered_cells, overhead_functions
+
+    def _system_designs_per_cell(  # pylint: disable=too-many-locals
+        self, cell: BatteryCell, log_level: int
+    ) -> list[SystemDesign]:
+        """TODO"""
+        logging.getLogger().setLevel(log_level)
+        system_designs_per_cell = []
+        logging.info("Process %s", cell)
+        # get electrical system configuration
+        electrical_configuration = self._determine_battery_system_configuration(cell)
+        logging.debug(electrical_configuration)
+        start_parameter = [1, 1, 1, 1, 1]
+        # get all possible parameters for the series connection
+        parameters_series = find_parameter_sets(
+            start_parameter,
+            lambda x: np.prod(x)
+            >= electrical_configuration.cells_in_series,  # pylint: disable=cell-var-from-loop
+        )
+        start_parameter = [1, 1, 1, 1, 1]
+        # get all possible parameters for the parallel connection
+        parameters_parallel = find_parameter_sets(
+            start_parameter,
+            lambda x: np.prod(x)
+            >= electrical_configuration.cells_in_parallel,  # pylint: disable=cell-var-from-loop
+        )
+        parameter_sets = []
+        cell_rotation = (0, 1)  # 0=0° or 1=90° cell rotation
+        # overhead functions is a list with a overhead definition for each cooling type
+        for cart_product in product(
+            self.overhead_functions,
+            parameters_series,
+            parameters_parallel,
+            cell_rotation,
+        ):
+            parameter_set = ParameterSet(
+                cell=cell, overhead=cart_product[0], requirements=self.requirements
+            )  # overhead
+            parameter_set["series"] = cart_product[1]  # series
+            parameter_set["parallel"] = cart_product[2]  # parallel
+            parameter_set.cell_rotation = cart_product[3]  # rotation
+            parameter_sets.append(parameter_set)
+            logging.debug(parameter_set)
+        (
+            validated_parameter_sets,
+            mechanical_properties,
+            max_module_voltages,
+            workloads,
+        ) = self._check_upper_bounds(parameter_sets)
+        # initialize all validated system designs
+        for i, parameter_set in enumerate(validated_parameter_sets):
+            electrical_property = ElectricalProperties(
+                parameter_set,
+                electrical_configuration,
+                max_module_voltage=max_module_voltages[i],
+                workload=workloads[i],
+            )
+            mechanical_property = mechanical_properties[i]
+            system_design = SystemDesign(
+                parameter_set,
+                mechanical_property,
+                electrical_property,
+            )
+            system_designs_per_cell.append(system_design)
+        return system_designs_per_cell
 
     @staticmethod
     def _get_overhead_functions(overhead_plugin: str = ""):
