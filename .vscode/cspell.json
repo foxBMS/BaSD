@@ -28,6 +28,8 @@
         "Foerderung",
         "Forschung",
         "IISB",
+        "Jülich",
+        "BMBF",
         // rst and sphinx
         "automodule",
         "genindex",

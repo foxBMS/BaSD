@@ -7,6 +7,16 @@ The format is based on
 `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_,
 and this project adheres to `Calendar Versioning <https://calver.org/>`_.
 
+[2024.03.0] 2024-03-26
+----------------------
+
+Added
+^^^^^
+
+- Additionally to the `README.md` also state the acknowledgement in the
+  documentation itself.
+- Add documentation on how to build the `BaSD` Python package.
+
 [2024.01.1] 2024-01-22
 ----------------------
 

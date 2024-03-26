@@ -24,7 +24,7 @@ devel_env:
   stage: init_ci
   script:
     - $nr_of_occurrences = (Get-ChildItem -Include *.md,*.rst -Recurse -Exclude .\git,.\build| Select-String -pattern "$CondaEnvironmentName" -AllMatches).matches.count
-    - if ($nr_of_occurrences -ne 4) { Throw "devel env name does not match the docs"}
+    - if ($nr_of_occurrences -ne 6) { Throw "devel env name does not match the docs"}
 
 initialize_python_deps: # make sure we have an up-to-date conda and pip available
   stage: init_ci

@@ -37,3 +37,24 @@ For Development
       $ code .
       $ cd src # testing needs to be run in source directory
       $ python -m basd design -r ../tests/requirements/Example-system.json --database ../tests/cells
+
+Packaging
++++++++++
+
+   .. code-block:: console
+
+      $ # user: activate any conda base environment
+      $ conda activate basd-devel-env-11
+      $ cd path/to/repo
+      $ flit build
+
+Documentation Build
++++++++++++++++++++
+
+   .. code-block:: console
+
+      $ # user: activate any conda base environment
+      $ conda activate basd-devel-env-11
+      $ cd path/to/repo
+      $ cd docs
+      $ make html

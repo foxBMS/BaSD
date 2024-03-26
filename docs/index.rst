@@ -24,9 +24,24 @@ system configurations.
 
 The following documentation describes how to use and extend |basd|.
 
+.. |logo_fkz| image:: ./_static/bmbf.png
+
 .. note::
 
    |basd| is licensed under the :ref:`MIT license <LICENSE>`.
+
+.. note::
+
+   +-------------------------------------+------------------------------------+
+   | This work was financially supported | |logo_fkz|                         |
+   | by the Federal Ministry of          |                                    |
+   | Education Research within the       |                                    |
+   | projects FKZ: 03XP0338C ("SimBAS"). |                                    |
+   | The project is cared by Project     |                                    |
+   | Management Jülich.                  |                                    |
+   | The responsibility for this         |                                    |
+   | publication rests with the authors. |                                    |
+   +-------------------------------------+------------------------------------+
 
 .. toctree::
    :maxdepth: 1
@@ -70,6 +85,7 @@ The following documentation describes how to use and extend |basd|.
    license.rst
    GitHub <https://github.com/foxBMS/BaSD>
    Documentation <https://basd.readthedocs.io>
+   acknowledgment.rst
 
 Indices and tables
 
